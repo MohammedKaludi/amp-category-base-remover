@@ -15,15 +15,15 @@ register_activation_hook( __FILE__,   'ampforwp_remove_category_url_refresh_rule
 register_deactivation_hook( __FILE__, 'ampforwp_remove_category_url_deactivate' );
 
 /* actions */
-add_action( 'created_category', 'ampforwp_remove_category_url_refresh_rules' );
-add_action( 'delete_category',  'ampforwp_remove_category_url_refresh_rules' );
-add_action( 'edited_category',  'ampforwp_remove_category_url_refresh_rules' );
-add_action( 'init',             'ampforwp_remove_category_url_permastruct' );
+add_action( 'created_category', 'ampforwp_remove_category_url_refresh_rules', 100 );
+add_action( 'delete_category',  'ampforwp_remove_category_url_refresh_rules', 100 );
+add_action( 'edited_category',  'ampforwp_remove_category_url_refresh_rules', 100 );
+add_action( 'init',             'ampforwp_remove_category_url_permastruct', 100 );
 
 /* filters */
-add_filter( 'category_rewrite_rules', 'ampforwp_remove_category_url_rewrite_rules' );
-add_filter( 'query_vars',             'ampforwp_remove_category_url_query_vars' );    // Adds 'category_redirect' query variable
-add_filter( 'request',                'ampforwp_remove_category_url_request' );       // Redirects if 'category_redirect' is set
+add_filter( 'category_rewrite_rules', 'ampforwp_remove_category_url_rewrite_rules', 100 );
+add_filter( 'query_vars',             'ampforwp_remove_category_url_query_vars', 100 );    // Adds 'category_redirect' query variable
+//add_filter( 'request',                'ampforwp_remove_category_url_request' );       // Redirects if 'category_redirect' is set
 
 function ampforwp_remove_category_url_refresh_rules() {
 	global $wp_rewrite;
