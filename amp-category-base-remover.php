@@ -3,7 +3,7 @@
  * Plugin Name: AMP Category Base URL Remover
  * Plugin URI: https://ampforwp.com/extensions
  * Description: This plugin removes '/category' from your category permalinks. (e.g. `/category/example-post/` to `/example-post/`)
- * Version: 1.0
+ * Version: 1.0.1
  * Author: Mohammed Kaludi
  * Author URI: https://ampforwp.com/
 */ 
